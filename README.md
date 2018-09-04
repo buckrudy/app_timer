@@ -2,11 +2,12 @@
 
 
 ## compile
-type `make`
+`make`
 
 ## install
-type `make install`
-if encounter an error, maybe should `sudo`
+`make install`
+
+if encounter an error, maybe should use `sudo`
 
 ## How to Use
 1. include the header file `app_timer.h`
