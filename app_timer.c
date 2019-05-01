@@ -6,8 +6,17 @@
 #include <sys/timerfd.h>
 #include <sys/types.h>
 #include <pthread.h>
-#include "app_timer.h"
+
 #include "list.h"
+#include "app_timer.h"
+
+struct app_timer_data {
+	struct list_head node;
+	int is_repeat;
+	int t_fd;
+	void *user_data;
+	void (*timer_process)(void *data);
+};
 
 static int app_ep_fd;
 static pthread_t app_tid;
